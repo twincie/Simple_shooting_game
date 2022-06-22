@@ -17,7 +17,7 @@ class player:
         return f'{self.name} life remains {self.life}'
 
     def bullet_remaining(self):
-        # self.bullet -= 1
+        self.bullet -= 1
         return f'{self.name} bullet remains {self.bullet}'
 
     def take_cover(self, other):
@@ -28,7 +28,7 @@ class player:
     def shoot(self, other):
         print(self.name, 'takes a shot')
         if self.is_shot is True:
-            # other.life -= 1
+            other.life -= 1
             if other.life > 0:
                 return (other.life_remaining())
             else:
@@ -46,10 +46,6 @@ def main():
         print ("round",round)
         player1 = player(First_player)
         player2 = player(Second_player)
-        player1.life -= 1
-        player2.life -= 1
-        player1.bullet -= 1
-        player2.bullet -= 1
         print('player1:',player1.__dict__)
         print('player2:',player2.__dict__)
         print(player1.shoot(player2))
