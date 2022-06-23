@@ -20,10 +20,11 @@ class player:
             other.life -= 1
             if other.life <= 0:
                 print(other.name + ' was killed')
-                print('***********')
-                print('|game over|*********')
-                print('***********')
+                a = ('*************').center(50)
+                b = ('| game over |').center(50)
+                print(f'{a}\n{b}\n{a}')
                 print(self.name +' won')
+                print('**************************************************')
                 sys.exit()
             else:
                 return f'{other.name} has been shot'
@@ -50,19 +51,17 @@ def main():
     player1 = player(First_player)
     player2 = player(Second_player)
     round = 0
-    print('****************************************')
-    print('\n')
+    print('**************************************************')
     while True:
         round += 1
-        print ('***********')
-        print ('| round',round,'|')
-        print ('***********')
+        b = ('***********').center(50)
+        a = (f'| round {round} |').center(50,'*')
+        print(f'{b}\n{a}\n{b}')
         print(player1.shoot(player2))
-        print('****************************************')
+        print('**************************************************')
         print(f'LIVES Remaining:[{player1.name}:{player1.life},{player2.name}:{player2.life}]')
         print(f'BULLET Remaining:[{player1.name}:{player1.bullet},{player2.name}:{player2.bullet}]')
-        print('****************************************')
-        print('\n')
+        print('**************************************************')
         
 if __name__ =='__main__':
     main()
